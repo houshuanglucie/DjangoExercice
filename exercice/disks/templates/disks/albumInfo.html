@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album Information</title>
+</head>
+<body>
+
+<h1>Album information</h1>
+<h3><em>Artiste</em>:</h3>
+<h3><em>Pistes</em></h3>
+
+<table border="1" style="border-collapse:collapse">
+    {% for track in track_list %}
+        <div class="row">
+            <div class="col-sm-3">
+                <p>{{ track.Name }}}</p>
+            </div>
+            <div class="col-sm-3">
+                <p>{{ track.Composer }}}</p>
+            </div>
+            <div class="col-sm-3">
+                <p>{{ track.Milliseconds }}}</p>
+            </div>
+            <div class="col-sm-3">
+                <p>{{ track.UnitPrice }}}</p>
+            </div>
+        </div>
+
+    {% empty %}}
+        <div class="text-center">
+            <p>No track in the album</p>
+        </div>
+    {% endfor %}
+</table>
+
+</body>
+</html>

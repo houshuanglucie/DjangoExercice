@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search result</title>
+</head>
+<body>
+
+{% if error_msg %}
+    <p>{{ error_msg }}</p>
+{% endif %}
+
+{% for album in albums %}
+  <div>
+    These are albums with the key word.
+  </div>
+{% empty %}
+  <div class="no-post">
+    No matched albums.
+  </div>
+{% endfor %}
+
+</body>
+</html>

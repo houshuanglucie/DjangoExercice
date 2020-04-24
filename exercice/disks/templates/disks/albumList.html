@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disks</title>
+</head>
+<body>
+
+<h1>Albums</h1>
+
+<table border="1" style="border-collapse:collapse">
+    {% for album in albums %}
+    <tr>
+        <td height="50">
+            <a href="#" target="_blank">{{ album.Title }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
