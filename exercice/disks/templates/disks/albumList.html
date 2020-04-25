@@ -12,7 +12,7 @@
     {% for album in albums %}
     <tr>
         <td height="50">
-            <a href="{% url 'album_info' album.id %}" target="_blank">{{ album.Title }}</a>
+            <a href="{% url 'album_info' album.id %}" target="_self">{{ album.Title }}</a>
         </td>
     </tr>
     {% endfor %}
