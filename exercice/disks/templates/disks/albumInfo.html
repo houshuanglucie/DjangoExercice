@@ -2,30 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Album Information</title>
+    <title>Disks</title>
 </head>
 <body>
 
-<h1>Album information</h1>
-<h3><em>Artiste</em>:</h3>
-<h3><em>Pistes</em></h3>
+<h1>Album Information</h1>
+<h3><b>Artiste:</b></h3>
+<h3><b>Pistes</b></h3>
 
 <table border="1" style="border-collapse:collapse">
+    <tr>
+        <th>Nom</th>
+        <th>Compositeur</th>
+        <th>Duree</th>
+        <th>Bytes</th>
+        <th>Prix Unitaire</th>
+    </tr>
     {% for track in track_list %}
-        <div class="row">
-            <div class="col-sm-3">
-                <p>{{ track.Name }}}</p>
-            </div>
-            <div class="col-sm-3">
-                <p>{{ track.Composer }}}</p>
-            </div>
-            <div class="col-sm-3">
-                <p>{{ track.Milliseconds }}}</p>
-            </div>
-            <div class="col-sm-3">
-                <p>{{ track.UnitPrice }}}</p>
-            </div>
-        </div>
+        <tr>
+            <td>
+                <p>{{ track.Name }}</p>
+            </td>
+            <td>
+                <p>{{ track.Composer }}</p>
+            </td>
+            <td>
+                <p>{{ track.Milliseconds }}</p>
+            </td>
+            <td>
+                <p>{{ track.Bytes }}</p>
+            </td>
+            <td>
+                <p>{{ track.UnitPrice }}</p>
+            </td>
+        </tr>
 
     {% empty %}}
         <div class="text-center">

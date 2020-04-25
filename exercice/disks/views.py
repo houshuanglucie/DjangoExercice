@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .models import Album, Artist, Track
+from django.shortcuts import redirect
 # from .forms import RechercheForm
 
 
@@ -16,12 +17,11 @@ def album_list(request):
     return render(request, 'disks/albumList.html', locals())
 
 
-def album_info(request, q_id):
-    q = get_object_or_404(Album, id=q_id)
-    track_list = Track.objects.filter(Album=q)
+def album_info(request, album_id):
+    album = get_object_or_404(Album, id=album_id)
+    track_list = Track.objects.filter(Album=album)
     # for track in track_list:
     #     duree = track.Milliseconds
-
     return render(request, 'disks/albumInfo.html', locals())
 
 
