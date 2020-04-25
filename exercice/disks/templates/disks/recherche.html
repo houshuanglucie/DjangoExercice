@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Recherche</title>
 </head>
 <body>
 
-<form method="get" action="/search/">
-<!--  {% csrf_token %}-->
-  <input type="search" placeholder="key word" required>
-  <button type="submit">Rechercher</button>
-</form>
+{% if send %} Your message has been sent! {% endif %}
+
+<table border="1" style="border-collapse:collapse">
+    {% for album in result %}
+    <tr>
+        <td height="50">
+            <a href="{% url 'album_info' album.id %}" target="_blank">{{ album.Title }}</a>
+        </td>
+    </tr>
+    {% empty %}}
+        <div class="text-center">
+            <p>There is no album with this keyword.</p>
+        </div>
+    {% endfor %}
+</table>
 
 </body>
 </html>

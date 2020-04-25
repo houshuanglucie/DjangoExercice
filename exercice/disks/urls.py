@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.album_list, name='album_list'),
-    path('<int:album_id>', views.album_info, name='album_info'),
-    # path(r'^search/$', views.search),
+    path('<int:album_id>/', views.album_info, name='album_info'),
+    # path('recherche/', views.recherche, name='recherche'),
 ]

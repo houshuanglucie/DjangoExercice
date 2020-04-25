@@ -1,7 +1,5 @@
-# from django.forms import ModelForm
-# from .models import Track
-#
-# class RechercheForm(ModelForm):
-#     class Meta:
-#         model = Track
-#         fields = ('Name', 'Composer', 'Milliseconds', 'UnitPrice')
+from django import forms
+
+
+class RechercheForm(forms.Form):
+    key_word = forms.CharField(max_length=220)
