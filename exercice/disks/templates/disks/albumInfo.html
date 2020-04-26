@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Disks</title>
+    <style>
+        table, tr, td, th
+        {
+            border-collapse: collapse;
+            border: 1px solid gray;
+            padding-left: 10px;
+            padding-right: 30px;
+        }
+    </style>
 </head>
 <body>
 
@@ -10,14 +19,15 @@
 <p><b>Artiste: </b>{{ album.artist }}</p>
 <p><b>Pistes</b></p>
 
-<table border="1" style="border-collapse:collapse">
-    <tr>
+<table>
+    <tr style="height: 50px">
         <th>Nom</th>
         <th>Compositeur</th>
         <th>Duree</th>
         <th>Bytes</th>
         <th>Prix Unitaire</th>
     </tr>
+
     {% for track in track_list %}
         <tr>
             <td>
@@ -27,18 +37,18 @@
                 <p>{{ track.Composer }}</p>
             </td>
             <td>
-                <p>{{ track.Milliseconds }}</p>
+                <p>{{ track.Milliseconds }} ms</p>
             </td>
             <td>
                 <p>{{ track.Bytes }}</p>
             </td>
             <td>
-                <p>{{ track.UnitPrice }}</p>
+                <p>{{ track.UnitPrice }} $</p>
             </td>
         </tr>
 
     {% empty %}}
-        <div class="text-center">
+        <div>
             <p>No track in the album</p>
         </div>
     {% endfor %}
