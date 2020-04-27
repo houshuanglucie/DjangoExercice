@@ -57,7 +57,7 @@
 </head>
 <body>
 
-<form action="{% url 'album_list' %}" method="post" target="_blank">
+<form action="{% url 'album_list' %}" method="post" target="_self">
     {% csrf_token %}
     {{ form.as_p }}
     <input class="button" type="submit" value="Rechercher">
@@ -66,13 +66,15 @@
 <h1>Albums</h1>
 
 <table>
-    {% for album in albums %}
-    <tr>
-        <td height="50">
-            <a href="{% url 'album_info' album.id %}" target="_blank">{{ album.Title }}</a>
-        </td>
-    </tr>
-    {% endfor %}
+    <div>
+        {% for album in albums %}
+        <tr>
+            <td>
+                <a href="{% url 'album_info' album.id %}" target="_self">{{ album.Title }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </div>
 </table>
 
 </body>
