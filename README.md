@@ -1,3 +1,3 @@
 # DjangoExercice
 
-Some exercises on how to use Django, to prepare for two other web-application projects.
+Some exercises on how to use Django framework, to prepare for the other two web-application projects.
